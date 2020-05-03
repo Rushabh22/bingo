@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Api("Housie Fun App")
+@Api(value = "Housie Fun App")
 public class BingoApi {
     RandomNumberController randomNumberController = RandomNumberController.getInstance();
 
