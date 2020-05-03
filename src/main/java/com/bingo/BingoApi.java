@@ -1,6 +1,5 @@
 package com.bingo;
 
-import com.jayway.jsonpath.internal.function.Parameter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
