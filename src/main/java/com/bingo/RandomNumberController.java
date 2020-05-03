@@ -61,7 +61,7 @@ public class RandomNumberController {
     public GeneratedNumbers lastTen() {
         GeneratedNumbers generated = new GeneratedNumbers();
         if(generatedNumbersInSequence.size() > 10) {
-            generated.setGenerated(generatedNumbersInSequence.subList(generatedNumbersInSequence.size() - 10, generatedNumbersInSequence.size()));
+            generated.setGenerated(generatedNumbersInSequence.subList(generatedNumbersInSequence.size() - 9, generatedNumbersInSequence.size()+1));
         }else{
             generated.setGenerated(generatedNumbersInSequence);
         }
