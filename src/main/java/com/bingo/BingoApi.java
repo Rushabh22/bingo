@@ -1,7 +1,9 @@
 package com.bingo;
 
+import com.jayway.jsonpath.internal.function.Parameter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,7 +40,7 @@ public class BingoApi {
 
     @GetMapping("/verify")
     @ApiOperation("Verify the numbers, enter comma separated numbers to verify")
-    public Verification verify(@RequestParam(value = "numbers") String numbers) {
+    public Verification verify(@ApiParam (value = "Comma separated numbers to be verified", required = true) @RequestParam(value = "numbers") String numbers) {
         return randomNumberController.verify(numbers);
     }
 
