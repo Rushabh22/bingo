@@ -1,4 +1,4 @@
-package com.bingo;
+package com.greeting;
 
 public class Greeting {
 

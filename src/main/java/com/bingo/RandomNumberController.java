@@ -13,7 +13,7 @@ public class RandomNumberController {
     }
 
     public Integer generateLuckyNumber(){
-        Integer randomNumber = random.nextInt(90);
+        Integer randomNumber = random.nextInt(95);
         if(generatedNumbers.contains(randomNumber)){
             return generateLuckyNumber();
         }else {

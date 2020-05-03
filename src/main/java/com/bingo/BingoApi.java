@@ -24,7 +24,7 @@ public class BingoApi {
         return randomNumberController.verify(numbers);
     }
 
-    @DeleteMapping("/reset")
+    @GetMapping("/reset")
     public GeneratedNumbers reset() {
         return randomNumberController.reset();
     }
