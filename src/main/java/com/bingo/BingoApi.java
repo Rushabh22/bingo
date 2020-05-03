@@ -19,12 +19,22 @@ public class BingoApi {
         return randomNumberController.numbersTillNow();
     }
 
+    @GetMapping("/generatedInSequence")
+    public GeneratedNumbers generatedNumberInSequence() {
+        return randomNumberController.numberInOrder();
+    }
+
+    @GetMapping("/lastTen")
+    public GeneratedNumbers generatedLastTen() {
+        return randomNumberController.lastTen();
+    }
+
     @GetMapping("/verify")
     public Verification verify(@RequestParam(value = "numbers") String numbers) {
         return randomNumberController.verify(numbers);
     }
 
-    @GetMapping("/reset")
+    @DeleteMapping("/reset")
     public GeneratedNumbers reset() {
         return randomNumberController.reset();
     }

@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 public class RandomNumberController {
     private final Set<Integer> generatedNumbers = new HashSet<>();
+    private final List<Integer> generatedNumbersInSequence = new ArrayList<>();
     private final Random random = new Random();
 
     private static final RandomNumberController randomNumberController = new RandomNumberController();
@@ -18,6 +19,7 @@ public class RandomNumberController {
             return generateLuckyNumber();
         }else {
             generatedNumbers.add(randomNumber);
+            generatedNumbersInSequence.add(randomNumber);
             return randomNumber;
         }
     }
@@ -44,8 +46,21 @@ public class RandomNumberController {
 
     public GeneratedNumbers reset(){
         generatedNumbers.clear();
+        generatedNumbersInSequence.clear();
         return numbersTillNow();
     }
 
 
+    public GeneratedNumbers numberInOrder() {
+        GeneratedNumbers generated = new GeneratedNumbers();
+        generated.setGenerated(generatedNumbersInSequence);
+        return generated;
+
+    }
+
+    public GeneratedNumbers lastTen() {
+        GeneratedNumbers generated = new GeneratedNumbers();
+        generated.setGenerated(generatedNumbersInSequence.subList(generatedNumbersInSequence.size()-10, generatedNumbersInSequence.size()));
+        return generated;
+    }
 }
