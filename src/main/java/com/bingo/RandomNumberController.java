@@ -14,7 +14,7 @@ public class RandomNumberController {
     }
 
     public Integer generateLuckyNumber(){
-        Integer randomNumber = random.nextInt(95);
+        Integer randomNumber = random.nextInt(91);
         if(generatedNumbers.contains(randomNumber)){
             return generateLuckyNumber();
         }else {
@@ -61,7 +61,7 @@ public class RandomNumberController {
     public GeneratedNumbers lastTen() {
         GeneratedNumbers generated = new GeneratedNumbers();
         if(generatedNumbersInSequence.size() > 10) {
-            generated.setGenerated(generatedNumbersInSequence.subList(generatedNumbersInSequence.size() - 9, generatedNumbersInSequence.size()+1));
+            generated.setGenerated(generatedNumbersInSequence.subList(generatedNumbersInSequence.size() - 10, generatedNumbersInSequence.size()));
         }else{
             generated.setGenerated(generatedNumbersInSequence);
         }

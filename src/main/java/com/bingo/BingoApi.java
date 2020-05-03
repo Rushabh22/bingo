@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class BingoApi {
     RandomNumberController randomNumberController = RandomNumberController.getInstance();
 
-    @GetMapping("/bingo")
+    @GetMapping("/luckyNumber")
     @ApiOperation("Generate lucky number")
     public LuckyNumber luckyNumber() {
         return new LuckyNumber(randomNumberController.generateLuckyNumber().toString());
     }
 
     @GetMapping("/sorted")
-    @ApiOperation("Check the generated numbers")
+    @ApiOperation("Check the generated numbers in sorted")
     public GeneratedNumbers generatedNumber() {
         return randomNumberController.numbersTillNow();
     }
@@ -31,7 +31,7 @@ public class BingoApi {
     }
 
     @GetMapping("/lastTen")
-    @ApiOperation("Check the last ten generated numbers")
+    @ApiOperation("Get the last ten generated numbers")
     public GeneratedNumbers generatedLastTen() {
         return randomNumberController.lastTen();
     }
